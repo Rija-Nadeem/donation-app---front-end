@@ -1,0 +1,102 @@
+.my-login-background{
+    border: 1px solid white;
+    height: 100vh;
+    background-image: url(../../images/bk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%; 
+}
+
+.my-login-background .main-section{
+    font-family: hind,sans-serif;
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+}
+
+.my-login-background .main-section .modal-content{
+    border-color:rgba(75, 138, 221,0.4) ;
+    border-width: 4px;
+    background-color: white;
+    padding: 0 18px;
+    border-radius: 10px;
+}
+
+.dark-border .user-img img{
+    height: 130px;
+    width: 130px;
+}
+
+.dark-border .user-img {
+    margin-top: -63px;
+    margin-bottom: 45px;
+}
+
+.my-login-form .form-group{
+    margin-bottom: 25px;
+}
+
+.my-login-form .form-group .form-control{
+    border: 1px solid rgb(191, 222, 255);
+    color: #6c6c6c;
+}
+
+.my-login-form .form-group input{ 
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    /* font-size: 18px;
+    letter-spacing: 2px; */
+    padding-left: 48px;
+}
+
+.my-login-form .form-group i{
+    position: absolute;
+    font-size: 22px;
+    left: 17px;
+    padding: 9px;
+    color: #4A89DC;
+    opacity: 0.9;
+}
+
+.my-login-form button{
+    width: 40%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.my-login-form .my-btn,
+.my-login-form .my-btn:active
+{
+    background-color:  #4A89DC;
+    font-family: roboto,sans-serif;
+    border: none;
+    width: 180px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    border-radius: 65px;
+    outline:none;
+}
+
+.my-login-form .login-btn
+{
+    font-size: 14px;
+    padding: 7px 14px;
+}
+
+.dark-border .forgot{
+    padding: 5px 0 25px;
+}
+
+.dark-border .forgot p{
+    margin: 0;
+}
+
+.dark-border .forgot a{
+    color: #6c6c6c;
+}

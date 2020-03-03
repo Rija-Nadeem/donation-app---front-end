@@ -1,0 +1,171 @@
+.account-pic-container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.my-signup-page .heading{
+    text-align: center;
+    color: #4A89DC!important;
+    font-size: 35px;
+    line-height: 30px;
+    letter-spacing: -.9px;
+    font-family: hind,sans-serif;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-6{
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instructions{
+    margin-top: 45px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.instructions p{
+    margin: 0;
+    line-height: 26px;
+    color: #6c6c6c; 
+}
+
+.main-donor-signup-form{
+    width: 80%;
+    margin: auto;   
+}
+
+.main-donor-signup-form .address-field{
+    margin-bottom: 10px;
+}
+
+.main-donor-signup-form .field-spacer{
+    margin-bottom: 10px;
+}
+
+.main-donor-signup-form .form-group{
+    margin: 0;
+}
+
+.main-donor-signup-form .form-control{
+    border: 1px solid rgb(162, 201, 243);
+    color: #6c6c6c;
+}
+
+.main-donor-signup-form input,
+.main-donor-signup-form textarea{
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    /* font-size: 18px;
+    letter-spacing: 2px; */
+    padding-left: 38px;
+}
+
+.main-donor-signup-form .form-group i{
+    color: #4A89DC;
+    opacity: 0.9;
+    position: relative;
+    top: 35px;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.form-input button
+{
+ 
+    width: 40%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.my-btn{
+    background-color:  #4A89DC;
+    font-family: roboto,sans-serif;
+    border: none;
+    width: 180px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    border-radius: 65px;
+   
+}
+
+.signup-btn
+{
+    margin: 20px 0px;
+    font-size: 14px;
+    padding: 7px 14px;
+    margin-left: auto;
+}
+
+@media (max-width:991px){
+    .main-donor-signup-form .address-field{
+        margin-bottom: 0px;
+    }
+    .main-donor-signup-form .number-field{
+        margin-bottom: 10px;
+    }
+   
+
+}
+
+@media(max-width: 768px) {
+    .account-pic-container{
+        width: 80%;
+     }
+
+     .main-donor-signup-form{
+        width: 90%;
+     }
+    
+}
+
+
+
+@media (max-width: 418px){
+    .account-pic-container{
+        width: 95%;
+    }
+    .main-donor-signup-form{
+        width: 95%;
+     }
+    .heading{
+        font-size: 30px;
+    }
+   
+   
+}
+
+
+@media (max-width: 320px){
+    .account-pic-container{
+        width: 100%;
+    }
+    .main-donor-signup-form{
+        width: 100%;
+     }
+    .heading{
+        font-size: 27px;
+    }
+    
+  
+}
+
+
+
+
+
+
+
+
