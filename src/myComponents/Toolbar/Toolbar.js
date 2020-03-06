@@ -25,6 +25,7 @@ const Toolbar = props =>{
                  
                     <ul>
                     <li>
+                    
                   
                     <div className="dropdown">
                         <button className="btn btn-outline-dark dropdown-toggle my-dropdown-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,9 +33,8 @@ const Toolbar = props =>{
                             <span className="caret"></span>
                         </button>
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <Link className="dropdown-item" to="/donationForm">Action</Link>
-                            <Link className="dropdown-item" to="/donationForm">Another action</Link>
-                            <Link className="dropdown-item" to="/donationForm">Something else here</Link>
+                            <Link className="dropdown-item" to="/donationForm">Donate Random Item</Link>
+                            <Link className="dropdown-item" to="/donationForm">see NGO's requirement</Link>
                         </div>
                     </div>
                     </li>

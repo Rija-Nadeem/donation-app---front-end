@@ -22,6 +22,7 @@ const SideDrawer= props=>{
 
             <div>
                 <ul>
+                    <li><Link to="/donationForm">Make Donations</Link></li>
                     <li><Link to="/aboutUs"><i className="fas fa-address-card"></i>About Us</Link></li>
                     <li><Link to="/login"><i className="fas fa-sign-in-alt"></i>Login</Link></li>
                     <li><Link to="/help"><i className="far fa-question-circle"></i>Help</Link></li>

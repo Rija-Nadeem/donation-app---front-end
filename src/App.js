@@ -1,11 +1,11 @@
 import React from 'react';
 import {BrowserRouter,Route} from 'react-router-dom';
-import MainPage from './components/MainPage/MainPage';
-import AboutUs from './components/AboutUs/AboutUs';
-import LoginForm from './components/Login/LoginForm';
-import Help from './components/Help/Help';
-import Signup from './components/Signup/Signup';
-import DonationForm from './components/DonationForm/DonationForm';
+import MainPage from './myComponents/MainPage/MainPage';
+import AboutUs from './myComponents/AboutUs/AboutUs';
+import LoginForm from './myComponents/Login/LoginForm';
+import Help from './myComponents/Help/Help';
+import Signup from './myComponents/Signup/Signup';
+import DonationForm from './myComponents/DonationForm/DonationForm';
 
 const App=()=>{
     return(
