@@ -3,14 +3,18 @@
     margin: 0 auto;
 }
 
-.my-signup-page .heading{
+ .blue-heading{
     text-align: center;
     color: #4A89DC!important;
-    font-size: 35px;
-    line-height: 30px;
+  
     letter-spacing: -.9px;
     font-family: hind,sans-serif;
     font-weight: 700;
+    
+}
+.my-signup-page .sigup-page-heading{
+    font-size: 35px;
+    line-height: 30px;
     margin-top: 30px;
     margin-bottom: 25px;
     margin-right: auto;

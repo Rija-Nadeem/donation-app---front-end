@@ -1,10 +1,62 @@
-/* .rating{
-    position: relative;
-    transform: translate(-50%,-50%);
-    top:10%;
-    left:50%;
+.my-donation-page .container{
+    border: 2px solid red;
+}
+
+
+
+/* .my-donation-form {
+     width: 70%;
+    margin: auto; 
 } */
-.my-donation-form {
+
+
+.my-login-background{
+    border: 1px solid white;
+    height: 100vh;
+    background-image: url(../../images/bk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%; 
+}
+
+
+.my-login-background .main-section{
+    font-family: hind,sans-serif;
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+  
+}
+
+.my-login-background .main-section .modal-content{
+    border-color:rgba(75, 138, 221,0.4) ;
+    border-width: 4px;
+    background-color: white;
+    padding: 0 18px;
+    border-radius: 10px;
+}
+
+
+.my-donation-form .star-rating{
+    font-size: 30px;
+} 
+
+.dark-border .gift-img img{
+    height: 150px;
+    width: 175px;
+    margin : 0 auto;
+}
+
+.dark-border .gift-img {
+    margin-top: -63px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 576){
+.main-section{
     width: 70%;
-    margin: auto;
+}
 }

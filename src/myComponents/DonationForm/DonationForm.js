@@ -1,22 +1,50 @@
 import React, { Component } from 'react';
 import './DonationForm.css';
+import StarRatingComponent from 'react-star-rating-component';
+import Gift from '../../images/giftbox.png';
+
 
 class DonationForm extends Component{
+    constructor() {
+        super();
+     
+        this.state = {
+          rating: 1,
+          category:"Clothes",
+          itemDescription:"",
+          
+         
+        };
+      }
 
-    state={
-        category:"Clothes",
-        itemDescription:"",
-    };
+      
+
+      onStarClick(nextValue, prevValue, name) {
+        this.setState({rating: nextValue});
+      };
+
 
     DonationFormInputChange=(event, fieldName)=>{
         this.setState({[fieldName]: event.target.value });
     };
+    // setRating=(e)=>{
+        
+    //     this.setState({setrating: e.target.value});
+    //     console.log(this.state);
+    // };
 
     render(){
+        const { rating } = this.state;
         return(
-            <div className="my-login-background">
-                <form className="my-donation-form" noValidate>
+            <div className="my-donation-page">
+                <div className="container">
+                    <h1 className="blue-heading">Make A Donation</h1>
 
+                </div>
+                     {/* <div className="gift-img">
+                        <img src={Gift} alt="no img"/>
+                    </div> 
+                <form className="my-donation-form" noValidate>
                     <div className="form-group">
                         <label htmlFor="category">Category</label>
                         <select name="category" 
@@ -30,7 +58,6 @@ class DonationForm extends Component{
                             <option>Medicines</option>
                         </select>
                     </div> 
-
                     <div className="form-group">
                         <label htmlFor="item-description">Description</label>
                         <textarea name="item-description" 
@@ -41,22 +68,24 @@ class DonationForm extends Component{
                                 id="item-description" 
                                 className="form-control">
                         </textarea>
-                    </div>    
+                    </div>  
                     <div className="form-group">
-                        
+                        <label>Please rate condition of item</label>
+                        <div>
+                            <StarRatingComponent 
+                            className="star-rating"
+                            name="rate1" 
+                            starCount={5}
+                            value={rating}
+                            onStarClick={this.onStarClick.bind(this)}
+                            />
+                        </div>
                     </div>
-
-                    {/* <div className="form-group rating">
-                        <input type="radio" name="star" id="star1" /><label htmlFor="star1"></label>
-                        <input type="radio" name="star" id="star2" /><label htmlFor="star2"></label>
-                        <input type="radio" name="star" id="star3" /><label htmlFor="star3"></label>
-                        <input type="radio" name="star" id="star4" /><label htmlFor="star4"></label>
-                        <input type="radio" name="star" id="star5" /><label htmlFor="star5"></label>
-                    </div>       */}
-
-                    {/* <button type="submit" className="login-btn my-btn">Login</button> */}
-                </form>
+                </form> */}
             </div>
+                  
+                
+            
         );
     }
 }

@@ -25,8 +25,6 @@ const Toolbar = props =>{
                  
                     <ul>
                     <li>
-                    
-                  
                     <div className="dropdown">
                         <button className="btn btn-outline-dark dropdown-toggle my-dropdown-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Make Donations

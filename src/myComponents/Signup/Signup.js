@@ -214,7 +214,7 @@ class Signup extends Component{
     return(
         <div className="my-signup-page"> 
             <div className="container" >
-                    <h1 className="heading">Choose Account Type</h1>
+                    <h1 className="blue-heading sigup-page-heading">Choose Account Type</h1>
                     <div className="account-pic-container">
                     <div className="row">
                         <div className="col-6 ">
