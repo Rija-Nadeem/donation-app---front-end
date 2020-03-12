@@ -1,14 +1,66 @@
-.my-donation-page .container{
-    border: 2px solid red;
+.my-donation-form{
+    width: 80%;
+    margin: auto;  
+}
+.my-donation-form .form-control{
+    border: 1px solid rgb(162, 201, 243);
+    color: #6c6c6c;
+}
+/* .my-donation-form .form-group label.my-donation-label{
+    color:"red" !important;
+} */
+.my-donation-page .donation-heading{
+    font-size: 35px;
+    line-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
+.my-condition-radio .radio{
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
 
+.my-condition-radio .radio + .radio{
+    margin-left: 30px;
+}
 
-/* .my-donation-form {
-     width: 70%;
-    margin: auto; 
-} */
+.my-condition-radio input[type=radio]{
+    margin: 15px 0;
+    margin-left: 20px;
+    display: none;
+}
 
+.my-condition-radio span{
+    height: 20px;
+    width: 20px;
+    border-radius:50%;
+    border: 3px solid #4A89DC;
+    display: block;
+    position: absolute;
+    left:3px;
+    top: 3px;
+}
+
+.my-condition-radio span:after{
+    content:"";
+    height: 8px;
+    width: 8px;
+    background: #4A89DC;
+    display: block;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition:300ms ease-in-out 0s;
+}
+
+.my-condition-radio .radio input[type="radio"]:checked ~ span:after{
+    transform: translate(-50%, -50%) scale(1);
+}
 
 .my-login-background{
     border: 1px solid white;
@@ -19,13 +71,11 @@
     background-size: 100% 100%; 
 }
 
-
 .my-login-background .main-section{
     font-family: hind,sans-serif;
     margin: 0 auto;
     margin-top: 130px;
     padding: 0;
-  
 }
 
 .my-login-background .main-section .modal-content{
@@ -35,7 +85,6 @@
     padding: 0 18px;
     border-radius: 10px;
 }
-
 
 .my-donation-form .star-rating{
     font-size: 30px;
@@ -55,8 +104,37 @@
     justify-content: center;
 }
 
-@media (max-width: 576){
-.main-section{
-    width: 70%;
+@media(max-width: 768px) {
+
+     .my-donation-form{
+        width: 90%;
+     }
+    
 }
+
+
+
+@media (max-width: 418px){
+
+    .my-donation-form{
+        width: 95%;
+     }
+     .my-donation-page .donation-heading{
+        font-size: 30px;
+    }
+   
+   
+}
+
+
+@media (max-width: 320px){
+
+    .my-donation-form{
+        width: 100%;
+     }
+     .my-donation-page .donation-heading{
+        font-size: 27px;
+    }
+    
+  
 }

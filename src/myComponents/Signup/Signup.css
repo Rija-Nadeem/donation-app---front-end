@@ -3,25 +3,21 @@
     margin: 0 auto;
 }
 
- .blue-heading{
+.blue-heading{
     text-align: center;
     color: #4A89DC!important;
-  
     letter-spacing: -.9px;
     font-family: hind,sans-serif;
     font-weight: 700;
-    
 }
 .my-signup-page .sigup-page-heading{
     font-size: 35px;
     line-height: 30px;
     margin-top: 30px;
     margin-bottom: 25px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
-.col-6{
+.account-pic-container .row  .main-pic-container{
     padding: 0px;
     display: flex;
     align-items: center;
@@ -144,7 +140,7 @@
     .main-donor-signup-form{
         width: 95%;
      }
-    .heading{
+     .my-signup-page .sigup-page-heading{
         font-size: 30px;
     }
    
@@ -159,7 +155,7 @@
     .main-donor-signup-form{
         width: 100%;
      }
-    .heading{
+     .my-signup-page .sigup-page-heading{
         font-size: 27px;
     }
     

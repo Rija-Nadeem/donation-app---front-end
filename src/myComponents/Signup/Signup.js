@@ -217,10 +217,10 @@ class Signup extends Component{
                     <h1 className="blue-heading sigup-page-heading">Choose Account Type</h1>
                     <div className="account-pic-container">
                     <div className="row">
-                        <div className="col-6 ">
+                        <div className="col-6 main-pic-container ">
                         <AccountTypeButton tagname="Donor" picture="pic1" AccountHandler={this.AccountSelectionHandler} checked={this.state.donor} />
                         </div>
-                        <div className="col-6 ">
+                        <div className="col-6  main-pic-container ">
                             <AccountTypeButton tagname="NGO" picture="pic2" AccountHandler={this.AccountSelectionHandler} checked={this.state.ngo}/>
                         </div>
                     </div>
