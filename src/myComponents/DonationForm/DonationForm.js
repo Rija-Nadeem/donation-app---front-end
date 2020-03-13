@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './DonationForm.css';
 import StarRatingComponent from 'react-star-rating-controlled-component';
 import DummyImage from './DummyImage';
+import book from '../../images/book.png';
+import heartImg from '../../images/heart-img.PNG';
+import giftbox from '../../images/giftbox.png';
 
 const initialDonationState={
     rating: 0,
@@ -10,6 +13,7 @@ const initialDonationState={
     condition: "Used",
     ratingError:"",
     itemDescriptionError:"",
+    files: [],
 }
 
 class DonationForm extends Component{
@@ -25,8 +29,31 @@ class DonationForm extends Component{
 
     DonationFormInputChange=(event, fieldName)=>{
         this.setState({[fieldName]: event.target.value });
-        console.log(event.target.value);
+       
     };
+
+    ImagefileSelectedHandler = (e) => {
+        this.setState({ files: [...this.state.files, ...e.target.files] });
+       
+        console.log(e.target.files);
+      }
+    // ImageInputChange=(e)=>{
+    //     this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] })
+      
+    // };
+        // let files=event.target.files;
+        // let reader=new FileReader();
+        // reader.readAsDataURL(files[0]);
+        // reader.onload=(e)=>{
+        //     console.log(e.target.result);
+        // for uploading image to api
+        //     const url="http://127.0.0.1:8000/api/services";
+        //     const formData={file:e.target.result}
+        //     return post(url, formData)
+        //         .then(response=>console.log(response))
+        //}
+       
+    
 
     Donationvalidation=(e)=>{
         let itemDescriptionError="";
@@ -79,13 +106,13 @@ class DonationForm extends Component{
                     <div className="account-pic-container">
                         <div className="row">
                             <div className="col-4 main-pic-container">
-                                <DummyImage picture="giftbox" />
+                                <DummyImage picture={giftbox} />
                             </div>
                             <div className="col-4 main-pic-container">
-                                <DummyImage picture="heart-img" />
+                                <DummyImage picture={heartImg} />
                             </div>
                             <div className="col-4 main-pic-container">
-                                <DummyImage picture="book" />
+                                <DummyImage picture={book}/>
                             </div>
                         </div>
                     </div>
@@ -118,6 +145,22 @@ class DonationForm extends Component{
                         </textarea>
                         <div style={{fontSize:"12.8px", color:"#DC3545", marginLeft:"20px"}}>{this.state.itemDescriptionError}</div>
                     </div> 
+
+                    <div className="form-group">
+                        <label>Upload Item Image(s)</label>
+                        <div className="item-pic-container ">
+                        <input type="file" multiple onChange={this.ImagefileSelectedHandler} />
+                           
+                        {/* <div className="item-pic">
+                            <img src={book} alt="no imag" />
+                        </div> */}
+                             
+
+                        </div>
+
+
+                    </div>
+
                     <div className="row">
                             <div className="col-sm-6">
 

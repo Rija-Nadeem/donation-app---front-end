@@ -6,12 +6,9 @@ class DummyImage extends Component{
     render(){
     return(
         <div className="account-button">
-             
                 <div className="pic-container ">
-                    <div className={this.props.picture}></div>
-                    
+                <img src={this.props.picture} alt="no img" className="set-img-in-div"/>
                 </div>
-            
             </div>
         
     ); 
