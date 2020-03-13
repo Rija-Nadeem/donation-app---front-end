@@ -13,14 +13,22 @@ const initialDonationState={
     condition: "Used",
     ratingError:"",
     itemDescriptionError:"",
-    files: [],
+    itemPic: [],
 }
 
 class DonationForm extends Component{
     constructor() {
         super();
      
-        this.state = initialDonationState;
+        this.state = {
+            rating: 0,
+            category:"Clothes",
+            itemDescription:"",
+            condition: "Used",
+            ratingError:"",
+            itemDescriptionError:"",
+            itemPic: [],
+        };
       }
 
     onStarClick(nextValue, prevValue, name) {
@@ -28,15 +36,27 @@ class DonationForm extends Component{
     };
 
     DonationFormInputChange=(event, fieldName)=>{
-        this.setState({[fieldName]: event.target.value });
-       
+        this.setState({[fieldName]: event.target.value}, ()=> {
+            console.log(this.state);
+        });
+        // this.setState({[fieldName]: event.target.value });
+        // console.log(this.state.category);
     };
 
     ImagefileSelectedHandler = (e) => {
-        this.setState({ files: [...this.state.files, ...e.target.files] });
-       
-        console.log(e.target.files);
-      }
+     
+
+
+        this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] },
+            ()=>{
+            for(let i=0; i < this.state.itemPic.length; i++){
+            console.log(this.state.itemPic[i].name);
+            }
+        });
+        
+      };
+
+
     // ImageInputChange=(e)=>{
     //     this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] })
       
@@ -150,15 +170,13 @@ class DonationForm extends Component{
                         <label>Upload Item Image(s)</label>
                         <div className="item-pic-container ">
                         <input type="file" multiple onChange={this.ImagefileSelectedHandler} />
-                           
-                        {/* <div className="item-pic">
-                            <img src={book} alt="no imag" />
-                        </div> */}
-                             
-
+                      
+                        {/*                            
+                         <div className="item-pic">
+                            <img src={url} alt="..." />
+                        </div>  */}
+                    
                         </div>
-
-
                     </div>
 
                     <div className="row">
