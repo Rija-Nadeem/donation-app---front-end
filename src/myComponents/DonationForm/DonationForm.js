@@ -13,8 +13,10 @@ const initialDonationState={
     condition: "Used",
     ratingError:"",
     itemDescriptionError:"",
-    itemPic: [],
+    // itemPic: [],
 }
+
+
 
 class DonationForm extends Component{
     constructor() {
@@ -27,7 +29,7 @@ class DonationForm extends Component{
             condition: "Used",
             ratingError:"",
             itemDescriptionError:"",
-            itemPic: [],
+            // itemPic: [],
         };
       }
 
@@ -43,17 +45,40 @@ class DonationForm extends Component{
         // console.log(this.state.category);
     };
 
-    ImagefileSelectedHandler = (e) => {
+    // ImagefileSelectedHandler = (e) => {
      
-
-
-        this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] },
-            ()=>{
-            for(let i=0; i < this.state.itemPic.length; i++){
-            console.log(this.state.itemPic[i].name);
-            }
-        });
+    //     this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] },
+    //         ()=>{
+    //         for(let i=0; i < this.state.itemPic.length; i++){
+    //             imgArray[i]=this.state.itemPic[i].name;
+            
+    //         }
+    //         console.log(imgArray);
+    //     });
         
+    //   };
+
+      displayImg=()=>{
+
+        // for(let j=0; j<this.state.itemPic.length;j++){
+        //     return (
+        //         <div className="item-pic" key={j}>
+        //         <img src={URL.createObjectURL(this.state.itemPic[j])}  alt="..." />
+        //         </div>
+                
+        //     );
+        // }
+     
+        const images=this.state.itemPic.map(img=>{
+           
+            return (
+                <div className="item-pic" key={img}>
+                <img src={URL.createObjectURL(img)}  alt="..." />
+                </div>
+                
+            );
+        });
+    return <div>{images}</div>
       };
 
 
@@ -169,15 +194,25 @@ class DonationForm extends Component{
                     <div className="form-group">
                         <label>Upload Item Image(s)</label>
                         <div className="item-pic-container ">
-                        <input type="file" multiple onChange={this.ImagefileSelectedHandler} />
+                         
+                          
                       
-                        {/*                            
-                         <div className="item-pic">
-                            <img src={url} alt="..." />
-                        </div>  */}
-                    
+                                                  
                         </div>
                     </div>
+
+
+                     {/* <div className="form-group">
+                        <label>Upload Item Image(s)</label>
+                        <div className="item-pic-container ">
+                          <input type="file" multiple onChange={this.ImagefileSelectedHandler}/>
+                          
+                        { (this.state.itemPic.length > 0) ?
+                            this.displayImg() : null
+                        }
+                                                  
+                        </div>
+                    </div> */}
 
                     <div className="row">
                             <div className="col-sm-6">

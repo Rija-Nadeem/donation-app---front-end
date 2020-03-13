@@ -11,16 +11,20 @@
     border: 1px solid rgb(162, 201, 243);
     color: #6c6c6c;
     border-radius: 5px;
-  
   padding: 7px;
     width: 100%;
+      /* display: flex;
+    flex-direction: row; */
    
 }
+/*
 
 .item-pic{
     border: 2px solid blue;
     height: 128px;
     width: 128px;
+    display: flex;
+    flex-direction: row;
 }
 .item-pic img{
     height: 100%;
@@ -28,7 +32,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 100% 100%; 
-}
+} */
 
 /* .my-donation-form .form-group label.my-donation-label{
     color:"red" !important;
