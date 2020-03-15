@@ -13,24 +13,14 @@ const initialDonationState={
     condition: "Used",
     ratingError:"",
     itemDescriptionError:"",
-    // itemPic: [],
+    itemPic: [],
 }
-
-
 
 class DonationForm extends Component{
     constructor() {
         super();
      
-        this.state = {
-            rating: 0,
-            category:"Clothes",
-            itemDescription:"",
-            condition: "Used",
-            ratingError:"",
-            itemDescriptionError:"",
-            // itemPic: [],
-        };
+        this.state = initialDonationState;
       }
 
     onStarClick(nextValue, prevValue, name) {
@@ -38,47 +28,24 @@ class DonationForm extends Component{
     };
 
     DonationFormInputChange=(event, fieldName)=>{
-        this.setState({[fieldName]: event.target.value}, ()=> {
-            console.log(this.state);
-        });
-        // this.setState({[fieldName]: event.target.value });
-        // console.log(this.state.category);
+        this.setState({[fieldName]: event.target.value});
     };
 
-    // ImagefileSelectedHandler = (e) => {
-     
-    //     this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] },
-    //         ()=>{
-    //         for(let i=0; i < this.state.itemPic.length; i++){
-    //             imgArray[i]=this.state.itemPic[i].name;
-            
-    //         }
-    //         console.log(imgArray);
-    //     });
-        
-    //   };
+    ImagefileSelectedHandler = (e) => {
+        this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] });
+      };
 
       displayImg=()=>{
-
-        // for(let j=0; j<this.state.itemPic.length;j++){
-        //     return (
-        //         <div className="item-pic" key={j}>
-        //         <img src={URL.createObjectURL(this.state.itemPic[j])}  alt="..." />
-        //         </div>
-                
-        //     );
-        // }
-     
         const images=this.state.itemPic.map(img=>{
-           
             return (
-                <div className="item-pic" key={img}>
-                <img src={URL.createObjectURL(img)}  alt="..." />
+                <div  key={img}>
+                   <div className="upload-pic-container">
+                     <img src={URL.createObjectURL(img)}  alt="..." />
+                    </div>
                 </div>
-                
             );
         });
-    return <div>{images}</div>
+    return <div className="item-pic " >{images}</div>
       };
 
 
@@ -130,13 +97,12 @@ class DonationForm extends Component{
                 category:this.state.category,
                 itemDescription:this.state.itemDescription,
                 condition: this.state.condition,
+                itemPic: this.state.itemPic,
             }
             //clear form
             this.setState(initialDonationState);
             console.log(DonationData);
-            
         }
-        console.log(this.state);
     };
    
     render(){
@@ -191,28 +157,18 @@ class DonationForm extends Component{
                         <div style={{fontSize:"12.8px", color:"#DC3545", marginLeft:"20px"}}>{this.state.itemDescriptionError}</div>
                     </div> 
 
-                    <div className="form-group">
+                     <div className="form-group">
                         <label>Upload Item Image(s)</label>
                         <div className="item-pic-container ">
-                         
-                          
-                      
-                                                  
+                            <input type="file" multiple onChange={this.ImagefileSelectedHandler}/>
+                        
+                            <div className="container">
+                                { (this.state.itemPic.length > 0) ?
+                                    this.displayImg() : null
+                                }
+                            </div>                       
                         </div>
                     </div>
-
-
-                     {/* <div className="form-group">
-                        <label>Upload Item Image(s)</label>
-                        <div className="item-pic-container ">
-                          <input type="file" multiple onChange={this.ImagefileSelectedHandler}/>
-                          
-                        { (this.state.itemPic.length > 0) ?
-                            this.displayImg() : null
-                        }
-                                                  
-                        </div>
-                    </div> */}
 
                     <div className="row">
                             <div className="col-sm-6">
