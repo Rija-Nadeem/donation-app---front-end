@@ -29,8 +29,8 @@ class MainPage extends Component {
 
     return (
       <div style={{ height: "100%" }}>
-        <Toolbar drawerClickHandler={this.drawerToggleHandler} />
-        <SideDrawer show={this.state.siderDrawerOpen} />
+        <Toolbar drawerClickHandler={this.drawerToggleHandler} about={false} />
+        <SideDrawer show={this.state.siderDrawerOpen} about={false} />
         {backdrop}
         <main>
           <div className="display-pic">

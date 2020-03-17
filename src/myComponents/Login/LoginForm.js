@@ -119,6 +119,7 @@ class LoginForm extends Component{
                         <div className="col-12 forgot">
                             <p><a href="/">Forgot Password?</a></p>
                             <p><Link to="/signup">Don't have an account?</Link></p>
+                            <p><Link to="/">Back to Home Page</Link></p>
                         </div>
                         </div>
                     </div>

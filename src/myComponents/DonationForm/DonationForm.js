@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './DonationForm.css';
 import StarRatingComponent from 'react-star-rating-controlled-component';
 import DummyImage from './DummyImage';
@@ -212,6 +213,7 @@ class DonationForm extends Component{
                             </div>
                         </div>
                         <button type="submit" style={{outline:"none"}} className="my-btn signup-btn">NEXT</button>
+                        <p ><Link to="/" style={{color: "#6c6c6c"}}>Back to Home Page</Link></p>
                 </form>
             </div>    
         </div>

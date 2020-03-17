@@ -114,7 +114,7 @@
     background-color: #e6e6e6;
 }
 
-@media (min-width: 769px){
+@media (min-width: 801px){
     .side-drawer{
         display:none;
     }

@@ -8,6 +8,14 @@ import Logo from '../../images/logo-transparent-background.png';
 
 
 const Toolbar = props =>{
+
+  
+    let listItem="About Us";
+    let navForList="/aboutUs"
+    if(props.about){
+        listItem="Home Page";
+        navForList="/";
+    }
    
     return(
         <header className="toolbar">
@@ -36,7 +44,7 @@ const Toolbar = props =>{
                         </div>
                     </div>
                     </li>
-                    <li><Link to="/aboutUs">About us</Link></li>
+                    <li><Link to={navForList}>{listItem}</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/help">Help</Link></li>
                     </ul>

@@ -69,6 +69,7 @@
   color: #585858;
   text-decoration: none;
   padding: 20px 16px;
+  border: none;
 }
 
 .toolbar-nav-items a:hover,
@@ -78,16 +79,16 @@
   color: #585858;
   text-decoration: none;
   background-color: #e6e6e6;
-  /* border: none ; */
+  border: none ;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 800px) {
   .toolbar-nav-items {
     display: none;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 801px) {
   .toolbar-toggle-button {
     display: none;
   }

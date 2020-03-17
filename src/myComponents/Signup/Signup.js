@@ -323,8 +323,10 @@ class Signup extends Component{
                         {this.isNgo()}
                         
                         {/* <NgoForm selected={this.state.ngo}/> */}
+                     
 
                     <button type="submit" style={{outline:"none"}} className="my-btn signup-btn">Sign Up</button>
+                    <p ><Link to="/" style={{color: "#6c6c6c"}}>Back to Home Page</Link></p>
                     </form>
 
                 </div>
