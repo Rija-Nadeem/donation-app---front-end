@@ -6,6 +6,7 @@ import DummyImage from './DummyImage';
 import book from '../../images/book.png';
 import heartImg from '../../images/heart-img.PNG';
 import giftbox from '../../images/giftbox.png';
+import {FaTimesCircle} from 'react-icons/fa';
 
 const initialDonationState={
     rating: 0,
@@ -32,6 +33,16 @@ class DonationForm extends Component{
         this.setState({[fieldName]: event.target.value});
     };
 
+    RemoveImg=(event, img)=>{
+        console.log(img.name);
+       
+        this.setState(prev => ({
+            itemPic: prev.itemPic.filter((el) => el.name !== img.name )
+            
+        }));
+        console.log(this.state.itemPic);
+    };
+
     ImagefileSelectedHandler = (e) => {
         this.setState({ itemPic: [...this.state.itemPic, ...e.target.files] });
       };
@@ -40,6 +51,7 @@ class DonationForm extends Component{
         const images=this.state.itemPic.map(img=>{
             return (
                 <div  key={img}>
+                    <i onClick={event=> this.RemoveImg(event, img)} ><FaTimesCircle  size="1.15rem"/></i>
                    <div className="upload-pic-container">
                      <img src={URL.createObjectURL(img)}  alt="..." />
                     </div>

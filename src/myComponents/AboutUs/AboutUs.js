@@ -94,6 +94,20 @@ class AboutUs extends React.Component {
                     
                     </div>
                 </section>
+                <section  >
+                    <h1 className="blue-heading">Our Partners</h1>
+                    <div className="container about-partners">
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                    <img class="img-rounded" src={classRoom}/>
+                        
+                    </div>
+                </section>
             </div>
 
             
