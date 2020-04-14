@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './Signup.css';
-import AccountTypeButton from './AccountTypeButton';
+import './AccountTypeButton.css';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {userType} from '../../actions';
 
 const initialState={
-    donor:true,
-    ngo:false,
+    // donor:true,
+    // ngo:false,
+    userType:"donor",
     name:"",
     email:"",
     password:"",
@@ -27,21 +30,23 @@ const initialState={
 
 class Signup extends Component{
 
+
 //  ************************for backend (start)*****************************
     constructor(){
         super();
         this.state=initialState;
     }
 //  ************************for backend (end)*****************************
-
+ 
     SignupHandleInputChange=(event, fieldName)=>{
         this.setState({[fieldName]: event.target.value });
     };
 
-    AccountSelectionHandler=()=>{
-        this.setState((prevState)=>{
-            return {donor: !prevState.donor,ngo: prevState.donor}
-        });
+    AccountSelectionHandler=(user)=>{
+        this.props.userType(user);
+        // this.setState((prevState)=>{
+        //     return {donor: !prevState.donor,ngo: prevState.donor}
+        // });
     };
 
     validate=(e)=>{
@@ -106,7 +111,7 @@ class Signup extends Component{
                 emailError='invalid email';
             }
         }
-        if(this.state.ngo){
+        if(this.props.type==='ngo'){
             //checking registration num
             if(!this.state.regNum){
                 regNumError='required';
@@ -134,8 +139,9 @@ class Signup extends Component{
         const isValid=this.validate();
         if (isValid){
             const signupData={
-                donor:this.state.donor,
-                ngo:this.state.ngo,
+                // donor:this.state.donor,
+                // ngo:this.state.ngo,
+                userType:this.props.type,
                 name:this.state.name,
                 email:this.state.email,
                 password:this.state.password,
@@ -151,11 +157,12 @@ class Signup extends Component{
             console.log(signupData);
             
         }   
+       
     };
 //  ************************for backend (end)*****************************
 
     isNgo=()=>{
-        if(this.state.ngo){
+        if(this.props.type==='ngo'){
             
         return(
             
@@ -218,10 +225,26 @@ class Signup extends Component{
                     <div className="account-pic-container">
                     <div className="row">
                         <div className="col-6 main-pic-container ">
-                        <AccountTypeButton tagname="Donor" picture="pic1" AccountHandler={this.AccountSelectionHandler} checked={this.state.donor} />
+                            <button className="account-button" onClick={()=>this.AccountSelectionHandler('donor')}>
+                                <div className="pic-border">
+                                    <div className="pic-container ">
+                                        <div className='pic1'></div>
+                                        <h3 className="tag">Donor</h3>
+                                    </div>
+                                {this.props.type==='donor' ? <i className="fas fa-certificate"></i> : null}
+                                </div>
+                            </button>
                         </div>
                         <div className="col-6  main-pic-container ">
-                            <AccountTypeButton tagname="NGO" picture="pic2" AccountHandler={this.AccountSelectionHandler} checked={this.state.ngo}/>
+                            <button className="account-button" onClick={()=>this.AccountSelectionHandler('ngo')}>
+                                <div className="pic-border">
+                                    <div className="pic-container ">
+                                        <div className='pic2'></div>
+                                        <h3 className="tag">NGO</h3>
+                                    </div>
+                                {this.props.type==='ngo' ? <i className="fas fa-certificate"></i> : null}
+                                </div>
+                            </button>
                         </div>
                     </div>
                     </div>
@@ -322,7 +345,7 @@ class Signup extends Component{
                         </div>
                         {this.isNgo()}
                         
-                        {/* <NgoForm selected={this.state.ngo}/> */}
+                        
                      
 
                     <button type="submit" style={{outline:"none"}} className="my-btn signup-btn">Sign Up</button>
@@ -337,5 +360,7 @@ class Signup extends Component{
     );
     }
 }
-
-export default Signup;
+const mapStateToProps=(state)=>{
+    return {type: state.userType}
+}
+export default connect(mapStateToProps,{userType})(Signup);
