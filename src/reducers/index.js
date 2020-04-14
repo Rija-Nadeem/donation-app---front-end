@@ -1,4 +1,6 @@
 import {combineReducers} from 'redux';
+import {reducer as formReducer} from 'redux-form';
+
 const userTypeReducer=(userType='donor', action)=>{
     if(action.type === 'CHANGE_OF_USER_TYPE'){
         return action.payload;
@@ -6,5 +8,6 @@ const userTypeReducer=(userType='donor', action)=>{
     return userType;
 };
 export default combineReducers({
-    userType: userTypeReducer
+    userType: userTypeReducer,
+    form: formReducer
 })

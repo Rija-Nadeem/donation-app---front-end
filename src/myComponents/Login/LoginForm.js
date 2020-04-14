@@ -1,82 +1,53 @@
 import React, { Component } from 'react';
+import {Field, reduxForm} from 'redux-form';
 import {Link} from 'react-router-dom';
 import './LoginForm.css';
 import FaceImage from '../../images/peo.png';
 
-const LoginInitialState={
-    loginEmail:"",
-    loginPassword:"",
-    loginEmailError: "",
-    loginPasswordError: "",
-}
+
 
 class LoginForm extends Component{
-//  ************************for backend (start)*****************************
-    constructor(){
-        super();
-        this.state=LoginInitialState;
+renderError(meta){
+    if( meta.error && meta.touched){
+        return(
+            <div style={{fontSize:"12.8px", color:"#DC3545", textAlign:"left", paddingTop:"3px", marginLeft:"5px"}}>{meta.error}</div>
+        );
     }
-//  ************************for backend (end)*****************************
+}
+    renderEmailInput=(formProps)=>{
+        const className=`form-group ${formProps.meta.error && formProps.meta.touched? 'error' : '' } `
+        return(
+            <div className={className}>
+                <i className="fas fa-at"></i>
+                <input type="email" 
+                        className="form-control" 
+                        placeholder="Enter Email"
+                        id="login-email"
+                        {...formProps.input}
+                        autoComplete="off"/>
+                   {this.renderError(formProps.meta)}
+            </div>
 
-    LoginHandleInputChange=(event, fieldName)=>{
-        this.setState({[fieldName]: event.target.value });
-    };
-
-    loginFormValidate=()=>{
-        let loginEmailError= "";
-        let loginPasswordError = "";
-
-        //checking  login email
-        if(!this.state.loginEmail){
-            loginEmailError='email cant be blank';
-        }
-        if(this.state.loginEmail){
-            if((!this.state.loginEmail.includes('@')) 
-                 || (this.state.loginEmail.indexOf('@') <= 0) 
-                 || (!this.state.loginEmail.includes('.')) 
-                 || ((this.state.loginEmail.charAt(this.state.loginEmail.length-4)!=='.') 
-                    && (this.state.loginEmail.charAt(this.state.loginEmail.length-3)!=='.')
-                    ) ){
-                loginEmailError='invalid email';
-            }
-        }
-
-        //checking password
-        if(!this.state.loginPassword){
-            loginPasswordError='Password cannot be blank';
-        }
-        if(this.state.loginPassword){
-            if((this.state.loginPassword.length<5) || (this.state.loginPassword.length>21)){
-                loginPasswordError='Password must be between 6 to 20';
-            }
-        }
-
-        if(loginEmailError || loginPasswordError){
-            this.setState({loginEmailError,loginPasswordError});
-            return false;
-        }
-        return true;
-
-    };
-
-//  ************************for backend (start)*****************************
-
-    LoginFormSubmitHandler=(e)=>{
-        e.preventDefault();
-        const isLoginFormValid=this.loginFormValidate();
-        if (isLoginFormValid){
-            const loginData={
-                loginEmail:this.state.loginEmail,
-                loginPassword:this.state.loginPassword,
-            }
-            //clear form
-            this.setState(LoginInitialState);
-            console.log(loginData);
-        }   
-
-    };
-//  ************************for backend (end)*****************************
-
+        );
+    }
+    renderPasswordInput=(formProps)=>{
+        const className=`form-group ${formProps.meta.error && formProps.meta.touched? 'error' : '' } `
+        return(
+            <div className={className}>
+                    <i className="fas fa-lock"></i>
+                <input type="password" 
+                        className="form-control" 
+                        placeholder="Enter Password"
+                        id="login-password"
+                        {...formProps.input}
+                        autoComplete="off"/>
+                  {this.renderError(formProps.meta)}
+            </div>
+        );
+    }
+    onSubmit=(formValues)=>{
+        console.log(formValues);
+    }
     render(){
         return(
             <div className="my-login-background">
@@ -87,32 +58,10 @@ class LoginForm extends Component{
                         <div className="col-12 user-img">
                             <img src={FaceImage} alt="no img"/>
                         </div>
-                        <div className="col-12 form-input">
-                        <form className="my-login-form" onSubmit={this.LoginFormSubmitHandler} noValidate>
-                            <div className="form-group ">
-                                <i className="fas fa-at"></i>
-                                <input type="email" 
-                                        className="form-control" 
-                                        placeholder="Enter Email"
-                                        name="login-email" 
-                                        id="login-email"
-                                        onChange={event=> this.LoginHandleInputChange(event, "loginEmail")} 
-                                        value={this.state.loginEmail} 
-                                        autoComplete="off"/>
-                                <div style={{fontSize:"12.8px", color:"#DC3545"}}>{this.state.loginEmailError}</div>
-                            </div>
-                            <div className="form-group">
-                                <i className="fas fa-lock"></i>
-                                <input type="password" 
-                                        className="form-control" 
-                                        placeholder="Enter Password"   
-                                        name="login-password" 
-                                        id="login-password"
-                                        onChange={event=> this.LoginHandleInputChange(event, "loginPassword")} 
-                                        value={this.state.loginPassword} 
-                                        autoComplete="off"/>
-                                <div style={{fontSize:"12.8px", color:"#DC3545"}}>{this.state.loginPasswordError}</div>
-                            </div>
+                        <div className="col-12 form-input" >
+                        <form className="my-login-form" onSubmit={this.props.handleSubmit(this.onSubmit)} noValidate>
+                            <Field name="loginEmail" component={this.renderEmailInput} />
+                            <Field name="loginPassword" component={this.renderPasswordInput}/>
                             <button type="submit" className="login-btn my-btn">Login</button>
                         </form>
                         </div>
@@ -130,4 +79,23 @@ class LoginForm extends Component{
     }
 
 }
-export default LoginForm;
+const Loginvalidate=(formValues)=>{
+    const errors={};
+    const validEmail=/^([a-zA-z0-9_\-\.]+)@([a-zA-z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    if(!formValues.loginEmail ){
+        errors.loginEmail="you must enter an email";
+    }else if(!validEmail.test(formValues.loginEmail)){
+        errors.loginEmail="invalid email";
+    }
+    
+    if(!formValues.loginPassword){
+        errors.loginPassword="you must enter password";
+    } else if ((formValues.loginPassword.length<5) || (formValues.loginPassword.length>20)){
+        errors.loginPassword="Password must be between 6 to 20";
+    }
+    return errors;
+}
+export default reduxForm({
+    form: 'loginForm',
+    validate:Loginvalidate
+})(LoginForm);
