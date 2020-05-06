@@ -224,7 +224,7 @@ class DonationForm extends Component{
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" style={{outline:"none"}} className="my-btn signup-btn">NEXT</button>
+                        <Link to="/googleMap"><button type="submit" style={{outline:"none"}} className="my-btn signup-btn">NEXT</button></Link>
                         <p ><Link to="/" style={{color: "#6c6c6c"}}>Back to Home Page</Link></p>
                 </form>
             </div>    

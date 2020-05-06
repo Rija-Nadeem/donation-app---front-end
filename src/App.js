@@ -6,6 +6,8 @@ import LoginForm from './myComponents/Login/LoginForm';
 import Help from './myComponents/Help/Help';
 import Signup from './myComponents/Signup/Signup';
 import DonationForm from './myComponents/DonationForm/DonationForm';
+import GoogleMap from './myComponents/GoogleMap/GoogleMap';
+import Places from './myComponents/GoogleMap/Places';
 
 const App=()=>{
     return(
@@ -17,6 +19,8 @@ const App=()=>{
            <Route path="/login" component={LoginForm}/>
            <Route path="/help" component={Help}/>
            <Route path="/donationForm" component={DonationForm}/>
+           <Route path="/googleMap" component={GoogleMap}/>
+           <Route path="/places" component={Places}/>
        </div>
        </BrowserRouter>
     );
