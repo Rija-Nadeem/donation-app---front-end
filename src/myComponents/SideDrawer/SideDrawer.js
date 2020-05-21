@@ -34,14 +34,7 @@ render(){
     if(this.props.show){
         drawerClasses='side-drawer open'
     }
-    let navigate="/";
-    let listItem="About Us";
-    let navForList="/aboutUs"
-    if(this.props.about){
-        navigate="/aboutUs";
-        listItem="Home Page";
-        navForList="/";
-    }
+  
 
     return(
         <nav className={drawerClasses}>
@@ -57,7 +50,7 @@ render(){
             <div>
                 <ul>
                     <li>
-                        <Link to={navigate}  onClick={this.MakingDonation}>
+                        <Link  onClick={this.MakingDonation}>
                         <i className="fas fa-hand-holding-heart"></i>
                             <button >
                                 Make Donations
@@ -66,7 +59,8 @@ render(){
                     </li>
                   
                     {this.showDonationOptions()}
-                    <li><Link to={navForList}><i className="fas fa-address-card"></i>{listItem}</Link></li>
+                    <li><Link to="/"><i className="fas fa-address-card"></i>Home</Link></li>
+                    <li><Link to="/aboutUs"><i className="fas fa-address-card"></i>About Us</Link></li>
                     <li><Link to="/login"><i className="fas fa-sign-in-alt"></i>Login</Link></li>
                     <li><Link to="/help"><i className="far fa-question-circle"></i>Help</Link></li>
                 </ul>

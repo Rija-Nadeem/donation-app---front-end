@@ -8,6 +8,8 @@ import Signup from './myComponents/Signup/Signup';
 import DonationForm from './myComponents/DonationForm/DonationForm';
 import GoogleMap from './myComponents/GoogleMap/GoogleMap';
 import Places from './myComponents/GoogleMap/Places';
+import Profile from './myComponents/Profile/Profile';
+import NGORequests from './myComponents/NGORequests/NGORequests';
 
 const App=()=>{
     return(
@@ -21,6 +23,8 @@ const App=()=>{
            <Route path="/donationForm" component={DonationForm}/>
            <Route path="/googleMap" component={GoogleMap}/>
            <Route path="/places" component={Places}/>
+           <Route path="/profile" component={Profile}/>
+           <Route path="/ngoRequests" component={NGORequests}/>
        </div>
        </BrowserRouter>
     );

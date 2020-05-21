@@ -6,7 +6,7 @@ class Footer extends React.Component{
             <footer>
                 <div className="footer-top">
                     <div className="container">
-                        <div class="row">
+                        <div className="row">
                             <div className="col-md-3 col-sm-6 col-xm-12 segment-one md-mb-30 sm-mb-30">
                                 <h3>Little Deeds</h3>
                                 <p> 
@@ -29,10 +29,10 @@ class Footer extends React.Component{
                                     Please follow us on our social media profile in order to keep updated.
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                 </p>
-                                <a href="/"><i class="fab fa-facebook"></i></a>
-                                <a href="/"><i class="fab fa-twitter"></i></a>
-                                <a href="/"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="/"><i class="fab fa-pinterest"></i></a>
+                                <a href="/"><i className="fab fa-facebook"></i></a>
+                                <a href="/"><i className="fab fa-twitter"></i></a>
+                                <a href="/"><i className="fab fa-linkedin-in"></i></a>
+                                <a href="/"><i className="fab fa-pinterest"></i></a>
                             </div>
                             <div className="col-md-3 col-sm-6 col-xm-12 segment-four sm-mb-30">
                                 <h2>Our Newletter</h2>
