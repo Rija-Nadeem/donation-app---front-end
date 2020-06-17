@@ -4,7 +4,10 @@ import SideDrawer from "../SideDrawer/SideDrawer";
 import BackDrop from "../BackDrop/BackDrop";
 import Footer from '../Footer/Footer';
 import './Profile.css';
+import Card from '../Card/Card';
 import item1 from '../../images/book.png';
+import item2 from '../../images/speak-for-change.jpg';
+import item3 from '../../images/together.png';
 
 class Profile extends React.Component{
     state = {
@@ -35,47 +38,24 @@ class Profile extends React.Component{
                 ThankYou so much for your donations
                 </div>
                 <div className="container item-card-container">
-                    <div class="card">
-                        <img src={item1} alt=".." className="card-image"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src={item1} alt=".." className="card-image"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src={item1} alt=".." className="card-image"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src={item1} alt=".." className="card-image"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src={item1} alt=".." className="card-image"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
+                    <Card 
+                        itemImg={item1} 
+                        title='Card title' 
+                        description="Some quick example text to build on the card title and make up the bulk of the card's content."
+                        status="Rejected"/>
+                    <Card 
+                        itemImg={item2} 
+                        title='Card title' 
+                        description="Some quick example text to build on the card title and make up the bulk of the card's content."
+                        status="Approved"/>
+                    <Card 
+                        itemImg={item3} 
+                        title='Card title' 
+                        description="Some quick example text to build on the card title and make up the bulk of the card's content."
+                        status="Pending"/>
+                  
                 </div>
+                <Footer/>
             </div>
         );
     }
