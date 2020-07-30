@@ -12,7 +12,6 @@ const Toolbar = props =>{
             <nav className="toolbar-nav">
                 
                 <div className="toolbar-logo">
-                
                         <span className="logo"><img alt="logo" src={Logo}/></span>
                     <Link to="/">
                         <div>Little Deeds</div>
@@ -23,20 +22,6 @@ const Toolbar = props =>{
                     <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/aboutUs">About</Link></li>
-
-                    <li>
-                    <div className="dropdown">
-                        <button className="btn dropdown-toggle my-dropdown-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Manage
-                            <span className="caret"></span>
-                        </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <Link className="dropdown-item" to="/manage-donations">Manage Donations</Link>
-                            <Link className="dropdown-item" to="/manage-stories">Manage Stories</Link>
-                        </div>
-                    </div>
-                    </li>
-
                     <li>
                     <div className="dropdown">
                         <button className="btn  dropdown-toggle my-dropdown-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

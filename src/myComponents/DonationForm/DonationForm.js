@@ -115,6 +115,7 @@ class DonationForm extends Component{
             //clear form
             this.setState(initialDonationState);
             console.log(DonationData);
+            this.props.history.push('/googleMap');
         }
     };
    

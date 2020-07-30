@@ -1,20 +1,21 @@
 import React from 'react';
-import {BrowserRouter,Route} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import history from './assets/history';
 import MainPage from './myComponents/MainPage/MainPage';
 import AboutUs from './myComponents/AboutUs/AboutUs';
 import LoginForm from './myComponents/Login/LoginForm';
 import Help from './myComponents/Help/Help';
 import Signup from './myComponents/Signup/Signup';
 import DonationForm from './myComponents/DonationForm/DonationForm';
-import GoogleMap from './myComponents/GoogleMap/GoogleMap';
-import Places from './myComponents/GoogleMap/Places';
+// import Places from './myComponents/GoogleMap/Places';
 import Profile from './myComponents/Profile/Profile';
 import NGORequests from './myComponents/NGORequests/NGORequests';
+import GoogleMap from './myComponents/GoogleMap/GoogleMap';
 
 const App=()=>{
     return(
-        <BrowserRouter>
-        <div>
+        <Router history={history}>
+        <Switch>
            <Route path="/" exact component={MainPage}/>
            <Route path="/signup" exact component={Signup}/>
            <Route path="/aboutUs" component={AboutUs}/>
@@ -22,11 +23,10 @@ const App=()=>{
            <Route path="/help" component={Help}/>
            <Route path="/donationForm" component={DonationForm}/>
            <Route path="/googleMap" component={GoogleMap}/>
-           <Route path="/places" component={Places}/>
            <Route path="/profile" component={Profile}/>
            <Route path="/ngoRequests" component={NGORequests}/>
-       </div>
-       </BrowserRouter>
+       </Switch>
+       </Router>
     );
 };
 export default App;

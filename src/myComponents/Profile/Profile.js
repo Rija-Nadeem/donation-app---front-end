@@ -5,9 +5,9 @@ import BackDrop from "../BackDrop/BackDrop";
 import Footer from '../Footer/Footer';
 import './Profile.css';
 import Card from '../Card/Card';
-import item1 from '../../images/book.png';
-import item2 from '../../images/speak-for-change.jpg';
-import item3 from '../../images/together.png';
+import item1 from '../../images/donation1.jpg';
+import item2 from '../../images/donation2.jpg';
+import item3 from '../../images/donation3.jpg';
 
 class Profile extends React.Component{
     state = {
@@ -39,12 +39,12 @@ class Profile extends React.Component{
                 </div>
                 <div className="container item-card-container">
                     <Card 
-                        itemImg={item1} 
+                        itemImg={item2} 
                         title='Card title' 
                         description="Some quick example text to build on the card title and make up the bulk of the card's content."
                         status="Rejected"/>
                     <Card 
-                        itemImg={item2} 
+                        itemImg={item1} 
                         title='Card title' 
                         description="Some quick example text to build on the card title and make up the bulk of the card's content."
                         status="Approved"/>
